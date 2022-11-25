@@ -4,14 +4,7 @@ const app = express();
 
 app.get("/", (req, res) => {
   
-    var fileName = 'index.html';
-    res.sendFile(fileName, options, function (err) {
-        if (err) {
-            res.send("Sorry the file could not be sent");
-        } else {
-            console.log('Sent:', fileName);
-        }
-    });
+	res.send("<h1>vercel is only for serverless deployment</h1>");
 });
 
 app.listen(5000, () => {
