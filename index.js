@@ -3,7 +3,15 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-  res.sendFile('index.html');
+  
+    var fileName = 'index.html';
+    res.sendFile(fileName, options, function (err) {
+        if (err) {
+            res.send("Sorry the file could not be sent");
+        } else {
+            console.log('Sent:', fileName);
+        }
+    });
 });
 
 app.listen(5000, () => {
